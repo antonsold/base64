@@ -4,8 +4,10 @@
 #include <array>
 #include <string>
 
-std::string base64Alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+=";
 std::string encodeBuffer(std::array<char, 3> buffer);
 std::string base64Encode(const std::string &stringToEncode);
+bool isBase64String(std::string stringToCheck);
+std::string decodeBuffer(std::array<char, 4> buffer);
+std::string base64Decode(std::string stringToDecode);
 
 #endif //BASE64_BASE64ENCODERDECODER_H
