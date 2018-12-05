@@ -20,7 +20,7 @@ TEST(EncoderTest, EmptyString) {
     ASSERT_EQ(base64Encode(""), "");
 }
 
-TEST(EncoderTest, OneLineTest) {
+TEST(EncoderTest, OneLine) {
     ASSERT_EQ(base64Encode("sadness"), "c2FkbmVzcw==");
     ASSERT_EQ(base64Encode("Hello, my dear friend!"), "SGVsbG8sIG15IGRlYXIgZnJpZW5kIQ==");
     ASSERT_EQ(base64Encode("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+="),
@@ -31,7 +31,7 @@ TEST(EncoderTest, OneLineTest) {
               "TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlzIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2YgdGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZGVsaWdodCBpbiB0aGUgY29udGludWVkIGFuZCBpbmRlZmF0aWdhYmxlIGdlbmVyYXRpb24gb2Yga25vd2xlZGdlLCBleGNlZWRzIHRoZSBzaG9ydCB2ZWhlbWVuY2Ugb2YgYW55IGNhcm5hbCBwbGVhc3VyZS4=");
 }
 
-TEST(EncoderTest, MultiLineTest) {
+TEST(EncoderTest, MultiLine) {
     std::string testText1 = R"(part 1
 part 2
 part 3
@@ -68,11 +68,11 @@ TEST(BlockDecoderTest, NonEqualitySignTermination) {
     ASSERT_EQ(decodeBuffer(std::array<char, 4>({'X', 'C', 'c', 'i'})), "\\\'\"");
 }
 
-TEST(DecoderTest, EmptyStringTest) {
+TEST(DecoderTest, EmptyString) {
     ASSERT_EQ(base64Decode(""), "");
 }
 
-TEST(DecoderTest, GoodStringTest) {
+TEST(DecoderTest, GoodString) {
     ASSERT_EQ(base64Decode("VGhpcyBpcyBhIHNhbXBsZSB0ZXN0Lg=="), "This is a sample test.");
     ASSERT_EQ(base64Decode("MzI6"), "32:");
     ASSERT_EQ(base64Decode(
@@ -94,14 +94,14 @@ TEST(DecoderTest, GoodStringTest) {
     His fell to Hamlet.)");
 }
 
-TEST(DecoderTest, BadStringTest) {
+TEST(DecoderTest, BadString) {
     ASSERT_EQ(base64Decode("ABC"), "");
     ASSERT_EQ(base64Decode("cXFuh"), "qqn");
     ASSERT_EQ(base64Decode("VGhpcyBpcyBhIHRlc3QgZm9yIGEgc3RyaW5nIHdpdGggd3JvbmcgbnVtYmVyIG9mIGNoYXJzLg==="),
               "This is a test for a string with wrong number of chars.");
 }
 
-TEST(DecoderTest, InvalidStringTest) {
+TEST(DecoderTest, InvalidString) {
     ASSERT_THROW(base64Decode("8)p"), std::invalid_argument);
     ASSERT_THROW(base64Decode("Invalid string!"), std::invalid_argument);
 }

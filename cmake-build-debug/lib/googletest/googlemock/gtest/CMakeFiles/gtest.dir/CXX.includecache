@@ -17,12 +17,12 @@ ostream
 -
 string
 -
+gtest/gtest-printers.h
+../lib/googletest/googletest/include/gtest/gtest/gtest-printers.h
 gtest/internal/gtest-internal.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/gtest-internal.h
 gtest/internal/gtest-port.h
 ../lib/googletest/googletest/include/gtest/gtest/internal/gtest-port.h
-gtest/gtest-printers.h
-../lib/googletest/googletest/include/gtest/gtest/gtest-printers.h
 
 ../lib/googletest/googletest/include/gtest/gtest-message.h
 limits
@@ -139,6 +139,8 @@ gtest/gtest.h
 ../lib/googletest/googletest/include/gtest/internal/custom/gtest.h
 
 ../lib/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+gtest/gtest-matchers.h
+../lib/googletest/googletest/include/gtest/internal/gtest/gtest-matchers.h
 gtest/internal/gtest-internal.h
 ../lib/googletest/googletest/include/gtest/internal/gtest/internal/gtest-internal.h
 stdio.h
@@ -191,7 +193,7 @@ gtest/internal/gtest-type-util.h
 ../lib/googletest/googletest/include/gtest/internal/gtest/internal/gtest-type-util.h
 
 ../lib/googletest/googletest/include/gtest/internal/gtest-param-util-generated.h
-cassert
+assert.h
 -
 memory
 -
@@ -279,8 +281,6 @@ regex.h
 -
 typeinfo
 -
-mem.h
--
 pthread.h
 -
 time.h
@@ -307,6 +307,8 @@ acxx_demangle.h
 ../lib/googletest/googletest/src/gtest-death-test.cc
 gtest/gtest-death-test.h
 ../lib/googletest/googletest/src/gtest/gtest-death-test.h
+utility
+-
 gtest/internal/gtest-port.h
 ../lib/googletest/googletest/src/gtest/internal/gtest-port.h
 gtest/internal/custom/gtest.h
